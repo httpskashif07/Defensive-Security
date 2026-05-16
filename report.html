@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vulnerability Scan Report — https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+         background:#f1f5f9;color:#1e293b;line-height:1.6}
+    .container{max-width:1000px;margin:0 auto;padding:24px}
+    header{background:#0f172a;color:#f8fafc;padding:32px;border-radius:12px;margin-bottom:24px}
+    header h1{font-size:1.8rem;font-weight:700}
+    header p{opacity:.75;margin-top:4px}
+    .disclaimer{background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;
+                 padding:16px;margin-bottom:24px;font-size:.9rem}
+    .disclaimer strong{color:#92400e}
+    .summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+              gap:16px;margin-bottom:32px}
+    .stat{background:#fff;border-radius:8px;padding:20px;text-align:center;
+           box-shadow:0 1px 3px rgba(0,0,0,.1)}
+    .stat .num{font-size:2.2rem;font-weight:800}
+    .stat .lbl{font-size:.8rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em}
+    .stat.high  .num{color:#dc2626}
+    .stat.medium .num{color:#d97706}
+    .stat.low   .num{color:#2563eb}
+    .stat.info  .num{color:#6b7280}
+    .stat.total .num{color:#0f172a}
+    .meta{background:#fff;border-radius:8px;padding:16px;margin-bottom:24px;
+           box-shadow:0 1px 3px rgba(0,0,0,.1);font-size:.9rem}
+    .meta table{width:100%;border-collapse:collapse}
+    .meta td{padding:6px 12px}
+    .meta td:first-child{font-weight:600;width:140px;color:#475569}
+    .category-heading{font-size:1.2rem;font-weight:700;color:#334155;
+                        margin:28px 0 12px;padding-bottom:6px;
+                        border-bottom:2px solid #e2e8f0}
+    .finding{border-radius:8px;padding:18px;margin-bottom:16px;
+              box-shadow:0 1px 3px rgba(0,0,0,.08)}
+    .finding-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .badge{color:#fff;font-size:.75rem;font-weight:700;padding:3px 10px;
+            border-radius:999px;letter-spacing:.04em}
+    .finding-title{font-size:1rem;font-weight:600}
+    .finding-table{width:100%;border-collapse:collapse;font-size:.875rem}
+    .finding-table th{width:130px;text-align:left;padding:6px 12px 6px 0;
+                        color:#475569;font-weight:600;vertical-align:top}
+    .finding-table td{padding:6px 0;vertical-align:top}
+    .finding-table code{background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px;
+                          font-size:.82rem;word-break:break-all}
+    .no-findings{background:#f0fdf4;border:1px solid #86efac;border-radius:8px;
+                  padding:20px;text-align:center;color:#166534}
+    footer{text-align:center;color:#94a3b8;font-size:.8rem;margin-top:32px;padding:16px}
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Web Application Vulnerability Report</h1>
+    <p>Target: https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net</p>
+  </header>
+
+  <div class="disclaimer">
+    <strong>Legal Notice:</strong> This report was generated for authorized security testing purposes only.
+    Scanning systems without explicit written permission is illegal and unethical.
+    The tool operator confirmed ownership/authorization before the scan began.
+  </div>
+
+  <div class="summary">
+    <div class="stat total">
+      <div class="num">11</div>
+      <div class="lbl">Total Findings</div>
+    </div>
+    <div class="stat high">
+      <div class="num">6</div>
+      <div class="lbl">High</div>
+    </div>
+    <div class="stat medium">
+      <div class="num">1</div>
+      <div class="lbl">Medium</div>
+    </div>
+    <div class="stat low">
+      <div class="num">4</div>
+      <div class="lbl">Low</div>
+    </div>
+    <div class="stat info">
+      <div class="num">0</div>
+      <div class="lbl">Info</div>
+    </div>
+  </div>
+
+  <div class="meta">
+    <table>
+      <tr><td>Target</td><td>https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net</td></tr>
+      <tr><td>Scan Started</td><td>2026-05-01 17:17:05</td></tr>
+      <tr><td>Scan Ended</td><td>2026-05-01 17:37:29</td></tr>
+      <tr><td>Pages Crawled</td><td>18</td></tr>
+    </table>
+  </div>
+
+  <h2 class="category-heading">Security Headers</h2>
+
+            <div class="finding" style="border-left:4px solid #dc2626;background:#fef2f2">
+              <div class="finding-header">
+                <span class="badge" style="background:#dc2626">High</span>
+                <span class="finding-title">Missing Security Header: Content-Security-Policy</span>
+              </div>
+              <table class="finding-table">
+                <tr><th>URL</th><td><code>https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net</code></td></tr>
+                <tr><th>Description</th><td>Content-Security-Policy (CSP) is missing. CSP prevents XSS and data injection attacks by declaring approved content sources.</td></tr>
+                <tr><th>Evidence</th><td><code>Header &#x27;Content-Security-Policy&#x27; not present in HTTP response.</code></td></tr>
+                <tr><th>Remediation</th><td>Add a Content-Security-Policy header, e.g.: Content-Security-Policy: default-src &#x27;self&#x27;; script-src &#x27;self&#x27;</td></tr>
+              </table>
+            </div>
+            
+            <div class="finding" style="border-left:4px solid #dc2626;background:#fef2f2">
+              <div class="finding-header">
+                <span class="badge" style="background:#dc2626">High</span>
+                <span class="finding-title">Missing Security Header: Strict-Transport-Security</span>
+              </div>
+              <table class="finding-table">
+                <tr><th>URL</th><td><code>https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net</code></td></tr>
+                <tr><th>Description</th><td>HTTP Strict-Transport-Security (HSTS) is missing. Without HSTS, the site is vulnerable to SSL stripping and protocol downgrade attacks.</td></tr>
+                <tr><th>Evidence</th><td><code>Header &#x27;Strict-Transport-Security&#x27; not present in HTTP response.</code></td></tr>
+                <tr><th>Remediation</th><td>Add Strict-Transport-Security: max-age=31536000; includeSubDomains; preload</td></tr>
+              </table>
+            </div>
+            
+            <div class="finding" style="border-left:4px solid #d97706;background:#fffbeb">
+              <div class="finding-header">
+                <span class="badge" style="background:#d97706">Medium</span>
+                <span class="finding-title">Missing Security Header: X-Content-Type-Options</span>
+              </div>
+              <table class="finding-table">
+                <tr><th>URL</th><td><code>https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net</code></td></tr>
+                <tr><th>Description</th><td>X-Content-Type-Options is missing. Browsers may MIME-sniff responses, potentially executing uploaded files as scripts.</td></tr>
+                <tr><th>Evidence</th><td><code>Header &#x27;X-Content-Type-Options&#x27; not present in HTTP response.</code></td></tr>
+                <tr><th>Remediation</th><td>Add X-Content-Type-Options: nosniff</td></tr>
+              </table>
+            </div>
+            
+            <div class="finding" style="border-left:4px solid #2563eb;background:#eff6ff">
+              <div class="finding-header">
+                <span class="badge" style="background:#2563eb">Low</span>
+                <span class="finding-title">Missing Security Header: X-XSS-Protection</span>
+              </div>
+              <table class="finding-table">
+                <tr><th>URL</th><td><code>https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net</code></td></tr>
+                <tr><th>Description</th><td>X-XSS-Protection is missing or disabled. This header activates the browser&#x27;s built-in XSS filter (legacy browsers).</td></tr>
+                <tr><th>Evidence</th><td><code>Header &#x27;X-XSS-Protection&#x27; not present in HTTP response.</code></td></tr>
+                <tr><th>Remediation</th><td>Add X-XSS-Protection: 1; mode=block</td></tr>
+              </table>
+            </div>
+            
+            <div class="finding" style="border-left:4px solid #2563eb;background:#eff6ff">
+              <div class="finding-header">
+                <span class="badge" style="background:#2563eb">Low</span>
+                <span class="finding-title">Missing Security Header: Referrer-Policy</span>
+              </div>
+              <table class="finding-table">
+                <tr><th>URL</th><td><code>https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net</code></td></tr>
+                <tr><th>Description</th><td>Referrer-Policy is missing. Sensitive URL data may leak to third parties via the Referer header.</td></tr>
+                <tr><th>Evidence</th><td><code>Header &#x27;Referrer-Policy&#x27; not present in HTTP response.</code></td></tr>
+                <tr><th>Remediation</th><td>Add Referrer-Policy: strict-origin-when-cross-origin</td></tr>
+              </table>
+            </div>
+            
+            <div class="finding" style="border-left:4px solid #2563eb;background:#eff6ff">
+              <div class="finding-header">
+                <span class="badge" style="background:#2563eb">Low</span>
+                <span class="finding-title">Missing Security Header: Permissions-Policy</span>
+              </div>
+              <table class="finding-table">
+                <tr><th>URL</th><td><code>https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net</code></td></tr>
+                <tr><th>Description</th><td>Permissions-Policy (formerly Feature-Policy) is missing. Browser features like camera, microphone, and geolocation are unrestricted.</td></tr>
+                <tr><th>Evidence</th><td><code>Header &#x27;Permissions-Policy&#x27; not present in HTTP response.</code></td></tr>
+                <tr><th>Remediation</th><td>Add Permissions-Policy: geolocation=(), microphone=(), camera=()</td></tr>
+              </table>
+            </div>
+            <h2 class="category-heading">XSS</h2>
+
+            <div class="finding" style="border-left:4px solid #dc2626;background:#fef2f2">
+              <div class="finding-header">
+                <span class="badge" style="background:#dc2626">High</span>
+                <span class="finding-title">Reflected XSS in GET parameter &#x27;category&#x27;</span>
+              </div>
+              <table class="finding-table">
+                <tr><th>URL</th><td><code>https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net/filter?category=javascript%3Aalert%281%29</code></td></tr>
+                <tr><th>Description</th><td>The parameter &#x27;category&#x27; reflects user input unsanitized in the HTML response. An attacker can craft a malicious URL that executes arbitrary JavaScript in the victim&#x27;s browser.</td></tr>
+                <tr><th>Evidence</th><td><code>Payload &#x27;javascript:alert(1)&#x27; was reflected verbatim in the response body.</code></td></tr>
+                <tr><th>Remediation</th><td>Encode all output using context-appropriate encoding (HTML entity encoding for HTML context). Implement a Content-Security-Policy. Use a framework that auto-escapes template output.</td></tr>
+              </table>
+            </div>
+            
+            <div class="finding" style="border-left:4px solid #dc2626;background:#fef2f2">
+              <div class="finding-header">
+                <span class="badge" style="background:#dc2626">High</span>
+                <span class="finding-title">Reflected XSS in GET parameter &#x27;category&#x27;</span>
+              </div>
+              <table class="finding-table">
+                <tr><th>URL</th><td><code>https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net/filter?category=javascript%3Aalert%281%29</code></td></tr>
+                <tr><th>Description</th><td>The parameter &#x27;category&#x27; reflects user input unsanitized in the HTML response. An attacker can craft a malicious URL that executes arbitrary JavaScript in the victim&#x27;s browser.</td></tr>
+                <tr><th>Evidence</th><td><code>Payload &#x27;javascript:alert(1)&#x27; was reflected verbatim in the response body.</code></td></tr>
+                <tr><th>Remediation</th><td>Encode all output using context-appropriate encoding (HTML entity encoding for HTML context). Implement a Content-Security-Policy. Use a framework that auto-escapes template output.</td></tr>
+              </table>
+            </div>
+            
+            <div class="finding" style="border-left:4px solid #dc2626;background:#fef2f2">
+              <div class="finding-header">
+                <span class="badge" style="background:#dc2626">High</span>
+                <span class="finding-title">Reflected XSS in GET parameter &#x27;category&#x27;</span>
+              </div>
+              <table class="finding-table">
+                <tr><th>URL</th><td><code>https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net/filter?category=javascript%3Aalert%281%29</code></td></tr>
+                <tr><th>Description</th><td>The parameter &#x27;category&#x27; reflects user input unsanitized in the HTML response. An attacker can craft a malicious URL that executes arbitrary JavaScript in the victim&#x27;s browser.</td></tr>
+                <tr><th>Evidence</th><td><code>Payload &#x27;javascript:alert(1)&#x27; was reflected verbatim in the response body.</code></td></tr>
+                <tr><th>Remediation</th><td>Encode all output using context-appropriate encoding (HTML entity encoding for HTML context). Implement a Content-Security-Policy. Use a framework that auto-escapes template output.</td></tr>
+              </table>
+            </div>
+            
+            <div class="finding" style="border-left:4px solid #dc2626;background:#fef2f2">
+              <div class="finding-header">
+                <span class="badge" style="background:#dc2626">High</span>
+                <span class="finding-title">Reflected XSS in GET parameter &#x27;category&#x27;</span>
+              </div>
+              <table class="finding-table">
+                <tr><th>URL</th><td><code>https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net/filter?category=javascript%3Aalert%281%29</code></td></tr>
+                <tr><th>Description</th><td>The parameter &#x27;category&#x27; reflects user input unsanitized in the HTML response. An attacker can craft a malicious URL that executes arbitrary JavaScript in the victim&#x27;s browser.</td></tr>
+                <tr><th>Evidence</th><td><code>Payload &#x27;javascript:alert(1)&#x27; was reflected verbatim in the response body.</code></td></tr>
+                <tr><th>Remediation</th><td>Encode all output using context-appropriate encoding (HTML entity encoding for HTML context). Implement a Content-Security-Policy. Use a framework that auto-escapes template output.</td></tr>
+              </table>
+            </div>
+            <h2 class="category-heading">Directory Enumeration</h2>
+
+            <div class="finding" style="border-left:4px solid #2563eb;background:#eff6ff">
+              <div class="finding-header">
+                <span class="badge" style="background:#2563eb">Low</span>
+                <span class="finding-title">Exposed Directories (Low) — 2 found</span>
+              </div>
+              <table class="finding-table">
+                <tr><th>URL</th><td><code>https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net</code></td></tr>
+                <tr><th>Description</th><td>This directory is publicly reachable. Depending on its contents it may aid an attacker in fingerprinting or mapping the application.</td></tr>
+                <tr><th>Evidence</th><td><code>The following 2 paths returned non-404 responses:
+  https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net/analytics  [200]
+  https://0afa00ed0342f03a80dbc137001f0063.web-security-academy.net/favicon.ico  [200]</code></td></tr>
+                <tr><th>Remediation</th><td>Review each exposed path. Restrict access where not needed publicly. Remove test/staging directories from production servers. Ensure directory listing is disabled on the web server.</td></tr>
+              </table>
+            </div>
+            
+
+  <footer>Generated by VulnScanner &bull; For authorized use only &bull; 2026-05-01 17:37:29</footer>
+</div>
+</body>
+</html>
