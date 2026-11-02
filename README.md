@@ -1,4 +1,4 @@
-# Defensive Security Toolkit
+# SOC-lab
 
 A collection of Python-based defensive security tools for authorized penetration testing, vulnerability assessment, and network anomaly detection. Built for educational use and authorized lab environments (CompTIA PenTest+ / Security+).
 
